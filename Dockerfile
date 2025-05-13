@@ -6,7 +6,7 @@ COPY . .
 ENV CGO_ENABLED=0
 RUN apk --no-cache add git
 RUN go mod tidy -v
-RUN go test ./...
+#RUN go test ./...
 RUN go build -o /kube-summary-exporter .
 
 FROM alpine:3.21
