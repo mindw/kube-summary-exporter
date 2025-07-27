@@ -9,7 +9,7 @@ RUN go mod tidy -v
 #RUN go test ./...
 RUN go build -o /kube-summary-exporter .
 
-FROM alpine:3.21
+FROM alpine:3.22
 COPY --from=build /kube-summary-exporter /kube-summary-exporter
 
 ENTRYPOINT [ "/kube-summary-exporter"]
